@@ -1,51 +1,52 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     font-family: 'Calculator', sans-serif;
     font-weight: normal;
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
-    background-color:#334257;
+    background-color: #334257;
 }
 
-h1{
+h1 {
     text-align: center;
-    font-size: 5.5rem;
-    color:#F0F0F0;
-    margin-top: 20px;
-    margin-bottom: 0;
+    font-size: 5rem;
+    color: #F0F0F0;
+    margin: 1rem auto;
 }
 
-.calculator-grid{
-display: grid;
-justify-content: center;
-align-content: center;
-min-height: 80vh;
-grid-template-columns: repeat(4, 100px);
-grid-template-rows: minmax(100px, auto) repeat(5, 100px);
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 50vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 100px);
 }
 
 
 
 .calculator-grid button {
-    background-color:  #F0F0F0;
+    background-color: #F0F0F0;
     cursor: pointer;
     font-size: 2rem;
     border: 2px solid white;
     outline: none;
 }
 
-.calculator-grid  button:hover{
+.calculator-grid button:hover {
     background-color: #fbf9fa;
 }
 
-#double-size{
+#double-size {
     grid-column: span 2;
 }
 
-.output{
+.output {
     grid-column: 1 / -1;
     background-color: #548ca8;
     display: flex;
@@ -57,16 +58,87 @@ grid-template-rows: minmax(100px, auto) repeat(5, 100px);
     word-break: break-all;
 }
 
-.output .previous{
+.output .previous {
     color: #fbf9fa;
     font-size: 1.7rem;
 }
 
 
-.output .current{
+.output .current {
     color: #fbf9fa;
     font-size: 2.7rem;
 
 }
 
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 2rem;
+    }
 
+    .calculator-grid {
+        grid-template-columns: repeat(4, 50px);
+        grid-template-rows: minmax(50px, auto) repeat(5, 50px);
+    }
+
+    .calculator-grid button {
+        font-size: 1.5rem;
+    }
+
+    .output .previous {
+        font-size: 1.2rem;
+    }
+
+    .output .current {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    h1 {
+        font-size: 3.5rem;
+
+    }
+
+    .calculator-grid {
+        grid-template-columns: repeat(4, 60px);
+        grid-template-rows: minmax(60px, auto) repeat(5, 60px);
+    }
+
+    .calculator-grid button {
+        font-size: 1.5rem;
+    }
+
+    .output .previous {
+        font-size: 1.2rem;
+    }
+
+    .output .current {
+        font-size: 2rem;
+    }
+}
+
+
+@media only screen and (min-width: 2300px) {
+    h1 {
+        font-size: 9rem;
+        margin-top: 3rem;
+
+    }
+
+    .calculator-grid {
+        grid-template-columns: repeat(4, 150px);
+        grid-template-rows: minmax(150px, auto) repeat(5, 150px);
+    }
+
+    .calculator-grid button {
+        font-size: 3.3rem;
+    }
+
+    .output .previous {
+        font-size: 3rem;
+    }
+
+    .output .current {
+        font-size: 3.3rem;
+    }
+}
